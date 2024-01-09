@@ -6,11 +6,15 @@
         url("../appPrototype/Arcon-Regular.otf") format("woff");
 }
 
+/* Color variables */
+
 :root {
     --bg_blue: #7c909a;
     --main_blue: #315760;
     --border_blue: #9eb2bc;
 }
+
+/* CSS reset */
 
 /* Box sizing rules */
 *,
@@ -88,23 +92,25 @@ select {
 }
 
 .app__wrapper {
-    max-width: 460px;
+    width: 352px;
+    height: 424px;
     margin: 0;
     font-family: "Arcon", sans-serif;
     background-color: var(--bg_blue);
-    border-radius: 24px;
-    padding: 22px;
+    border-radius: 1.5rem;
+    padding: 1.3rem;
     color: white;
     font-weight: 400;
 }
+/* Main section */
 
 .main__section {
     display: flex;
     justify-content: space-between;
     background-color: var(--main_blue);
-    border-top-right-radius: 24px;
-    border-top-left-radius: 24px;
-    padding: 28px;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    padding: 1rem;
 }
 
 .main__info p,
@@ -114,53 +120,78 @@ h2 {
 }
 
 .main__info h1 {
-    font-size: 72px;
+    font-size: 3.6rem;
     font-weight: lighter;
-    line-height: 52px;
-}
-
-.main__info p:first-of-type {
-    font-size: 18px;
-    margin-bottom: 32px;
+    line-height: 4rem;
 }
 
 .main__info h2 {
-    font-size: 42px;
+    font-size: 3rem;
     font-weight: lighter;
-    line-height: 40px;
+    line-height: 3rem;
+    margin-top: 2rem;
 }
 
 .main__icon,
 .forecast__icon {
     justify-content: center;
-    align-content: center;
-    margin: auto;
-    padding: 12px;
+    align-self: center;
+    padding: 0.5rem;
 }
+
+/* Forecast */
 
 .forecast {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content: stretch;
-    font-size: 12px;
+    justify-content: space-evenly;
+    font-size: 1rem;
     border: 3px solid var(--border_blue);
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 }
 
 .forecast__column {
     justify-content: space-between;
     max-width: fit-content;
     display: flex;
-    padding: 10px;
+    padding: 0.5rem;
 }
 
-.middle {
+.forecast__column .forecast__info {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 0.3rem;
+}
+
+.forecast_grid {
     border-left: 3px solid var(--border_blue);
     border-right: 3px solid var(--border_blue);
 }
 
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0.4rem;
+    padding: 0 0.5rem;
+}
+
 .app_footer {
-    text-align: center;
-    font-size: 12px;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.app__settings {
+    text-decoration: none;
+    color: white;
+}
+
+/* Settings */
+
+.weatherApp__settings {
+    min-height: 50vh;
 }
