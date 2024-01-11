@@ -1,13 +1,118 @@
 @font-face {
     font-family: "Arcon";
     font-weight: 400;
-    src: local("../styles/fonts/Arcon-Regular.otf"),
-        url("../styles/fonts/Arcon-Regular.otf") format("woff2"),
-        url("../styles/fonts/Arcon-Regular.otf") format("woff");
+    src: local("../canvas/fonts/Arcon-Regular.otf") url("../canvas/fonts/Arcon-Regular.otf") format("woff2"),
+        url("../canvas/fonts/Arcon-Regular.otf") format("woff");
+
 }
 
-/* Clock */
+.paragraph {
+    margin: 0;
+}
 
-.timer {
-    color: red;
+
+.app__wrapper {
+    width: 352px;
+    height: 424px;
+    margin: 0;
+    font-family: "Arcon", sans-serif;
+    background-color: #7c909a;
+    border-radius: 1.5rem;
+    padding: 1.3rem;
+    color: white;
+    font-weight: 400;
+}
+
+/* Main section */
+
+.main__section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #315760;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    padding: 1rem;
+}
+
+.main__info,
+.clock,
+.currentTemp {
+    margin: 0;
+}
+
+.main__info .clock {
+    font-size: 3.6rem;
+    font-weight: lighter;
+    line-height: 4rem;
+}
+
+.main__info .currentTemp {
+    font-size: 3rem;
+    font-weight: lighter;
+    line-height: 3rem;
+    margin-top: 2rem;
+}
+
+.main__icon,
+.forecast__icon {
+    justify-content: center;
+    align-self: center;
+    padding: 0.5rem;
+}
+
+/* Forecast */
+
+.forecast {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    border: 3px solid #9eb2bc;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.forecast__column {
+    justify-content: space-between;
+    max-width: fit-content;
+    display: flex;
+    padding: 0.5rem;
+}
+
+.forecast__column .forecast__info {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 0.3rem;
+}
+
+.forecast__grid {
+    border-left: 3px solid #9eb2bc;
+    border-right: 3px solid #9eb2bc;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0.4rem;
+    padding: 0 0.5rem;
+}
+
+.app_footer {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.app__settings {
+    text-decoration: none;
+    color: white;
+}
+
+/* Settings */
+
+.weatherApp__settings {
+    min-height: 50vh;
 }
