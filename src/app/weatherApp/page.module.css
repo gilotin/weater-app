@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Arcon";
+    font-weight: 400;
+    src: local("../styles/fonts/Arcon-Regular.otf"),
+        url("../styles/fonts/Arcon-Regular.otf") format("woff2"),
+        url("../styles/fonts/Arcon-Regular.otf") format("woff");
+}
+
+/* Clock */
+
+.timer {
+    color: red;
+}

@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { API_KEY } from "@/constants";
+import style from "../weatherApp/page.module.css";
+import dynamic from "next/dynamic";
+
+const Clock = dynamic(() => import("../components/Clock/Clock").then((module) => module.Clock), {
+    ssr: false,
+});
 
 export function WeatherApp() {
     const [city, setCity] = useState("");
@@ -31,6 +37,10 @@ export function WeatherApp() {
 
     return (
         <>
+            <section className={style.timer}>
+                <Clock />
+            </section>
+
             <h1>Hello to my test weather app</h1>
 
             <form onSubmit={handleSubmit}>
