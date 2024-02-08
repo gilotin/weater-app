@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Arcon";
     font-weight: 400;
-    src: local("../canvas/fonts/Arcon-Regular.otf") url("../canvas/fonts/Arcon-Regular.otf") format("woff2"),
-        url("../canvas/fonts/Arcon-Regular.otf") format("woff");
+    src: local("/fonts/Arcon-Regular.otf") url("/fonts/Arcon-Regular.otf") format("woff2"),
+        url("/fonts/Arcon-Regular.otf") format("woff");
 
 }
 
@@ -47,11 +47,12 @@
 }
 
 .main__info .currentTemp {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: lighter;
-    line-height: 3rem;
-    margin-top: 2rem;
+    /* line-height: 3rem; */
+    margin: 2rem 0 -0.2rem 0;
 }
+
 
 .main__icon,
 .forecast__icon {
@@ -60,13 +61,18 @@
     padding: 0.5rem;
 }
 
+.forecast img {
+    width: 50px;
+    height: 50px;
+}
+
 /* Forecast */
 
 .forecast {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-evenly;
-    font-size: 1rem;
+    font-size: 0.65rem;
     border: 3px solid #9eb2bc;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
@@ -77,12 +83,14 @@
     max-width: fit-content;
     display: flex;
     padding: 0.5rem;
+
 }
 
-.forecast__column .forecast__info {
+.forecast__info {
     padding: 0.5rem;
     font-size: 0.85rem;
     line-height: 0.3rem;
+
 }
 
 .forecast__grid {
