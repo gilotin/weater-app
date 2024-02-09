@@ -60,7 +60,10 @@ export function WeatherApp() {
                         <p className={style.paragraph}>Humidity 61%</p>
                     </div>
                     <div className={style.main__icon}>
-                        <WeatherIcon condition={cityData.current?.condition.text} />
+                        <WeatherIcon
+                            condition={cityData.current?.condition.text}
+                            isDay={cityData.current?.is_day}
+                        />
                     </div>
                 </section>
                 <section className={style.forecast}>
