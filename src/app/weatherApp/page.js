@@ -6,6 +6,7 @@ import style from "../weatherApp/page.module.css";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import WeatherIcon from "./WeatherConditions";
+import GetDateInfo from "../components/forecastComponent/GetDateInfo";
 
 const Clock = dynamic(
     () => import("../components/forecastComponent/Clock/Clock").then((module) => module.Clock),
@@ -45,14 +46,14 @@ export function WeatherApp() {
             <div className={style.app__wrapper}>
                 <section className={style.main__section}>
                     <div className={style.main__info}>
-                        <h1 className={style.clock}>
+                        <div className={style.clock}>
                             <Clock />
-                        </h1>
+                        </div>
                         <p className={style.paragraph}>
-                            <GetDateInfo />
+                            <GetDateInfo info={"weekDay"} />
                         </p>
                         <p className={style.paragraph}>
-                            <GetDateInfo info={cityData} />
+                            <GetDateInfo info={"monthDay"} />
                         </p>
                         <h2 className={style.currentTemp}>{cityData.current?.temp_c}&deg;C</h2>
                         <p className={style.paragraph}>{cityData.location?.name}</p>
@@ -87,7 +88,9 @@ export function WeatherApp() {
                     </div>
                     <div className="forecast__column">
                         <div className={style.forecast__info}>
-                            <p>WED</p>
+                            <p>
+                                <GetDateInfo info={"weekDay"} option={"short"} />
+                            </p>
                             <p>20</p>
                         </div>
                         <div className={style.forecast__icon}>

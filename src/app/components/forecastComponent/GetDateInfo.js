@@ -1,16 +1,22 @@
-function GetDateInfo(info) {
+export default function GetDateInfo({ info, option }) {
+    let formatDate = "";
+
     const date = new Date();
 
-    const weekday = date.toLocaleDateString("en-US", { weekday: "long" });
-
-    const monthDay = date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-    });
-
-    if (info) {
-        return monthDay;
+    if (info == "weekDay") {
+        formatDate = date.toLocaleDateString("en-US", { weekday: "long" });
+        if (option == "short") {
+            date.setDate(date.getDate() + 1);
+            formatDate = date.toLocaleDateString("en-US", { weekday: "short" });
+        }
     }
 
-    return weekday;
+    if (info == "monthDay") {
+        formatDate = date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+        });
+    }
+
+    return formatDate;
 }
