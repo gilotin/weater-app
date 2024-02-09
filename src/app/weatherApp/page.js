@@ -48,8 +48,12 @@ export function WeatherApp() {
                         <h1 className={style.clock}>
                             <Clock />
                         </h1>
-                        <p className={style.paragraph}>WEDNESDAY</p>
-                        <p className={style.paragraph}>MAY 23</p>
+                        <p className={style.paragraph}>
+                            <GetDateInfo />
+                        </p>
+                        <p className={style.paragraph}>
+                            <GetDateInfo info={cityData} />
+                        </p>
                         <h2 className={style.currentTemp}>{cityData.current?.temp_c}&deg;C</h2>
                         <p className={style.paragraph}>{cityData.location?.name}</p>
                         <p className={style.paragraph}>Humidity 61%</p>
