@@ -61,7 +61,7 @@ export function WeatherApp() {
                     </div>
                     <div className={style.main__icon}>
                         <WeatherIcon
-                            condition={cityData.current?.condition.text}
+                            condition={"Patchy light snow with thunder"}
                             isDay={cityData.current?.is_day}
                         />
                     </div>
