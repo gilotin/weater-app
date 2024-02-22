@@ -60,7 +60,10 @@ export function WeatherApp() {
                         <p className={style.paragraph}>Humidity 61%</p>
                     </div>
                     <div className={style.main__icon}>
-                        <WeatherIcon condition={"Moderate or heavy freezing rain"} isDay={"0"} />
+                        <WeatherIcon
+                            condition={cityData.current?.condition.text}
+                            isDay={cityData.current?.is_day}
+                        />
                     </div>
                 </section>
                 <section className={style.forecast}>
@@ -114,7 +117,7 @@ export function WeatherApp() {
                 <button type="submit">SEARCH</button>
             </form>
 
-            <p>Country:{cityData.location?.country}</p>
+            {/* <p>Country:{cityData.location?.country}</p>
             <p>City:{cityData.location?.name}</p>
             <p>date:{cityData.current?.last_updated}</p>
             <p>Weather Condition day 1:{cityData.forecast?.forecastday[0].day.condition.text}</p>
@@ -124,7 +127,7 @@ export function WeatherApp() {
             <p>Weather Condition day 3:{cityData.forecast?.forecastday[2].day.condition.text}</p>
             <img src={cityData.forecast?.forecastday[2].day.condition.icon} alt="sun" />
 
-            <p>Temperature:{cityData.current?.temp_c} Celsius</p>
+            <p>Temperature:{cityData.current?.temp_c} Celsius</p> */}
         </>
     );
 }
