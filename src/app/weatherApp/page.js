@@ -92,7 +92,7 @@ export function WeatherApp() {
                     <div className="forecast__column">
                         <div className={style.forecast__info}>
                             <p>
-                                <GetDateInfo info={"weekDay"} option={"short"} />
+                                <GetDateInfo data={cityData.forecast?.forecastday} />
                             </p>
                             <p>20</p>
                         </div>
