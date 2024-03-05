@@ -61,7 +61,7 @@ export function WeatherApp() {
                     </div>
                     <div className={style.main__icon}>
                         <WeatherIcon
-                            condition={cityData.current?.condition.text}
+                            condition={cityData.forecast?.forecastday[1].day.condition.text}
                             isDay={cityData.current?.is_day}
                         />
                     </div>
@@ -89,19 +89,6 @@ export function WeatherApp() {
                             />
                         </div>
                     </div>
-                    <div className="forecast__column">
-                        <div className={style.forecast__info}>
-                            <p>
-                                <GetDateInfo data={cityData.forecast?.forecastday} />
-                            </p>
-                            <p>20</p>
-                        </div>
-                        <div className={style.forecast__icon}>
-                            <WeatherIcon
-                                condition={cityData.forecast?.forecastday[2].day.condition.text}
-                            />
-                        </div>
-                    </div>
                 </section>
                 <footer>
                     <p className={style.app_footer}>Inspired by Freepik designs </p>
@@ -116,18 +103,6 @@ export function WeatherApp() {
                 <input type="text" id="city" onChange={(e) => setCity(e.target.value)} />
                 <button type="submit">SEARCH</button>
             </form>
-
-            {/* <p>Country:{cityData.location?.country}</p>
-            <p>City:{cityData.location?.name}</p>
-            <p>date:{cityData.current?.last_updated}</p>
-            <p>Weather Condition day 1:{cityData.forecast?.forecastday[0].day.condition.text}</p>
-            <img src={cityData.forecast?.forecastday[0].day.condition.icon} alt="sun" />
-            <p>Weather Condition day 2:{cityData.forecast?.forecastday[1].day.condition.text}</p>
-            <img src={cityData.forecast?.forecastday[1].day.condition.icon} alt="sun" />
-            <p>Weather Condition day 3:{cityData.forecast?.forecastday[2].day.condition.text}</p>
-            <img src={cityData.forecast?.forecastday[2].day.condition.icon} alt="sun" />
-
-            <p>Temperature:{cityData.current?.temp_c} Celsius</p> */}
         </>
     );
 }

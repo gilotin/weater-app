@@ -13,6 +13,5 @@ export default function GetDateInfo({ info, option }) {
             day: "numeric",
         });
     }
-
     return formatDate;
 }
